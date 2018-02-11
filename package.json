@@ -1,8 +1,6 @@
 {
-  "name": "angularjs-webpack-seed",
-  "version": "0.2.1",
-  "description": "A starter kit for using AngularJS with Webpack and ES6",
-  "main": "src/index.js",
+  "name": "elysian",
+  "version": "0.0.0",
   "scripts": {
     "build": "rimraf ./build && eslint *.js && webpack --config ./webpack.config.prod.js",
     "dev": "TASK=develop webpack-dev-server",
@@ -11,24 +9,9 @@
     "test:unit": "rimraf ./reports && karma start",
     "analyze": "webpack-bundle-analyzer ./build/stats.json"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/thegreenhouseio/angularjs-webpack-seed.git"
-  },
   "keywords": [
-    "angularjs",
-    "seed",
-    "starter",
-    "webpack",
-    "es6",
-    "javascript"
   ],
-  "author": "Owen Buckley <owen.buckley@analogstudios.net> (http://www.thegreenhouse.io)",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/thegreenhouseio/angularjs-webpack-seed/issues"
-  },
-  "homepage": "https://github.com/thegreenhouseio/angularjs-webpack-seed#readme",
+  "author": "Mayur Bapodra",
   "dependencies": {
     "angular": "^1.6.3",
     "angular-animate": "^1.6.3",

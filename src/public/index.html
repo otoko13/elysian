@@ -1,31 +1,15 @@
 <!DOCTYPE html>
+<html class="ng-cloak">
+    <head>
+        <base href="/">
+        <title>Elysian Events</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Elysian Events"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    </head>
 
-<html lang="en" ng-app="planttTestApp">
-
-  <head>
-    <base href="/">
-    <title>Plantt Calendar View Prototype</title>
-    <meta charset="utf-8">
-    <meta name="description" content="Plantt Calendar View Prototype"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  </head>
-
-  <body>
-
-  <div class="container-fluid">
-    <section class="row">
-      <div class="col-md-12">
-        <scheduler ng-controller="PlanttTestController"></scheduler>
-      </div>
-    </section>
-
-    <section class="row">
-      <div class="col-md-12">
-        TEST
-      </div>
-    </section>
-  </div>
-
-  </body>
+    <body ng-controller="MainController">
+        <ui-view></ui-view>
+    </body>
 </html>

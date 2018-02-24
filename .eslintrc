@@ -36,8 +36,5 @@
     "Image": true,
     "document": true,
     "sinon": true,
-    "API_PATH": true,
-    "IS_PROD": true,
-    "KEYCLOAK_CONFIG": true
   }
 }

@@ -9,32 +9,57 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 
 module.exports = webpackMerge(commonConfig, {
 
-  devtool: 'source-map',
+    devtool: 'source-map',
 
-  output: {
-    path: path.join(__dirname, 'build'),
-    filename: '[name].[chunkhash].bundle.js',
-    sourceMapFilename: '[name].[chunkhash].bundle.map',
-    chunkFilename: '[id].[chunkhash].chunk.js'
-  },
+    module: {
+        rules: [
+            {
+                test: /\.less$/,
+                use: ExtractTextPlugin.extract({
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true || {/* CSSNano Options */},
+                            },
+                        },
+                        {
+                            loader: 'postcss-loader',
+                        },
+                        {
+                            loader: 'less-loader',
+                        }],
+                    // use style-loader in development
+                    fallback: 'style-loader',
+                }),
+            },
+        ],
+    },
 
-  plugins: [
-    new NgAnnotatePlugin({
-      add: true
-    }),
-    new WebpackMd5Hash(),
-    new UglifyJsPlugin({
-      beautify: false,
-      mangle: { screw_ie8: true, keep_fnames: true }, // eslint-disable-line camelcase
-      compress: { screw_ie8: true }, // eslint-disable-line camelcase
-      comments: false,
-      sourceMap: true
-    }),
-    new ExtractTextPlugin('[name].[chunkhash].style.css'),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled',
-      generateStatsFile: true
-    })
-  ]
+    output: {
+        path: path.join(__dirname, '../build'),
+        filename: '[name].[chunkhash].bundle.js',
+        sourceMapFilename: '[name].[chunkhash].bundle.map',
+        chunkFilename: '[id].[chunkhash].chunk.js',
+    },
+
+    plugins: [
+        new NgAnnotatePlugin({
+            add: true,
+        }),
+        new WebpackMd5Hash(),
+        new UglifyJsPlugin({
+            beautify: false,
+            mangle: { screw_ie8: true, keep_fnames: true }, // eslint-disable-line camelcase
+            compress: { screw_ie8: true }, // eslint-disable-line camelcase
+            comments: false,
+            sourceMap: true,
+        }),
+        new ExtractTextPlugin('[name].[chunkhash].style.css'),
+        new BundleAnalyzerPlugin({
+            analyzerMode: 'disabled',
+            generateStatsFile: true,
+        }),
+    ],
 
 });

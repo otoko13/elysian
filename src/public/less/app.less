@@ -1,2 +1,14 @@
-@import "~bootstrap/less/bootstrap.less";
-@import "~bootstrap/less/variables.less";
+@import '~bootstrap/less/bootstrap.less';
+@import '~bootstrap/less/variables.less';
+@import './colors';
+
+html {
+  height: 100%;
+  width: 100%;
+
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: @backgroundColour;
+  }
+}

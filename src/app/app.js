@@ -1,20 +1,48 @@
 import _ from 'lodash';
 import angular from 'angular';
+
 // CSS
 import '../public/less/app.less';
-import './components/plantt/plantt';
 
-const planttState = require('./states/planttTest');
+// templates
+import homeTemplate from './states/home/home.html';
 
+// libraries
+import '../../node_modules/angular-ui-bootstrap';
+import '../../node_modules/angular-ui-router';
 
+/* eslint-disable */
 const libDependencies = [
-    'plantt.module',
+    'ui.router',
+    'ui.bootstrap',
 ];
 
 const appDependencies = [
-    planttState,
+    require('./components/main_controller'),
+    require('./states/home'),
 ];
 
 const dependencies = _.concat([], libDependencies, appDependencies);
+const application = angular.module('elysian', dependencies);
 
-angular.module('planttTestApp', dependencies);
+application.config(['$urlRouterProvider', function ($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+}]);
+
+application.config(['$stateProvider', '$locationProvider', function ($stateProvider, $locationProvider) {
+    $locationProvider.html5Mode(true).hashPrefix('');
+    $stateProvider
+        .state('home', {
+            url: '/',
+            controller: 'HomeController',
+            templateUrl: homeTemplate,
+        });
+}]);
+
+application.run(($rootScope) => {
+    $rootScope.applicationReady = true;
+});
+
+angular.element(document).ready(() => {
+    angular.bootstrap(document, ['elysian']);
+});

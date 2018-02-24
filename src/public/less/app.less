@@ -5,10 +5,24 @@
 html {
   height: 100%;
   width: 100%;
+  background-color: @backgroundColour;
 
   body {
     height: 100%;
     width: 100%;
-    background-color: @backgroundColour;
+    font-family: Lato;
+    text-align: center;
+  }
+
+  div, p, span, h1 {
+    color:#c3a343;
+    background: linear-gradient(transparent, transparent), url('../img/goldfoil2.jpg') repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+  }
+
+  h1 {
+    size: 150px;
+    letter-spacing: 10px;
   }
 }

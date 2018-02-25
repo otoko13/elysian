@@ -1,6 +1,10 @@
 import _ from 'lodash';
 import angular from 'angular';
 
+// libraries
+import 'angular-ui-bootstrap';
+import 'angular-ui-router';
+
 // CSS
 import '../public/less/app.less';
 
@@ -12,10 +16,6 @@ import pressTemplate from './states/press/press.html';
 import servicesTemplate from './states/services/services.html';
 import blogTemplate from './states/blog/blog.html';
 import contactUsTemplate from './states/contact_us/contact_us.html';
-
-// libraries
-import '../../node_modules/angular-ui-bootstrap';
-import '../../node_modules/angular-ui-router';
 
 /* eslint-disable */
 const libDependencies = [

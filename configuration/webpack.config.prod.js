@@ -14,6 +14,10 @@ module.exports = webpackMerge(commonConfig, {
     module: {
         rules: [
             {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
                     use: [

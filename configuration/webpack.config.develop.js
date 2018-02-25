@@ -25,6 +25,10 @@ module.exports = function () {
                     enforce: 'pre',
                 },
                 {
+                    test: /\.css$/,
+                    use: ['style-loader', 'css-loader'],
+                },
+                {
                     test: /\.less$/,
                     use: [
                         'style-loader',

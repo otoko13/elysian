@@ -26,6 +26,7 @@ const libDependencies = [
 const appDependencies = [
     require('./components/fix_and_shrink'),
     require('./components/main_controller'),
+    require('./components/side_menu'),
     require('./states/our_story'),
     require('./states/blog'),
     require('./states/contact_us'),

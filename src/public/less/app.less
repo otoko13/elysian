@@ -19,6 +19,10 @@ html {
     text-align: center;
     font-size: 100%;
     padding-top: @siteHeaderHeight;
+
+    @media @smallerScreen {
+      font-size: 75%;
+    }
   }
 
   .gold {
@@ -62,6 +66,10 @@ html {
     background-color: white;
     transition: height 0.25s ease-in-out;
 
+    @media @smallerScreen {
+      .shrunk;
+    }
+
     h1 {
       transition: font-size 0.25s ease-in-out;
     }
@@ -77,6 +85,15 @@ html {
       }
     }
 
+    .hamburger-container {
+      margin: 20px 35px;
+      color: @goldTextDarkerColour;
+      font-size: 2.8em;
+      opacity: 0;
+      cursor: pointer;
+      transition: opacity 0.4s ease-in;
+    }
+
     &.shrunk {
       height: 75px;
 
@@ -87,10 +104,10 @@ html {
       .links {
         opacity: 0;
       }
-    }
 
-    @media @smallerScreen {
-      .shrunk;
+      .hamburger-container {
+        opacity: 1;
+      }
     }
   }
 }

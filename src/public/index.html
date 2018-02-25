@@ -7,17 +7,32 @@
         <meta name="description" content="Elysian Events"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
     </head>
 
     <body ng-controller="MainController">
-    <div class="container-fluid">
-        <div class="site-header row">
+    <div class="container-fluid navbar-fixed-top header-container">
+        <div class="row">
             <div class="col-md-12">
-                <h1>ELYSIAN EVENTS</h1>
+                <div class="site-header" fix-and-shrink top="125">
+                    <div class="pull-left">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <h1 class="gold">ELYSIAN EVENTS</h1>
+                    <div class="links">
+                        <a class="page-link" ui-sref=".home">Home</a>
+                        <a class="page-link" ui-sref=".our-story">Our Story</a>
+                        <a class="page-link" ui-sref=".services">Services</a>
+                        <a class="page-link" ui-sref=".portfolio">Portfolio</a>
+                        <a class="page-link" ui-sref=".press">Press</a>
+                        <a class="page-link" ui-sref=".contact-us">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </div>
+        <hr class="header-divider" fix-and-shrink top="125">
+    </div>
+    <div class="container-fluid">
         <div class="site-content row">
             <div class="col-md-12">
                 <ui-view></ui-view>

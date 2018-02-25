@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const PATHS = {
     INDEX_HTML: path.resolve('src', 'public', 'index.html'),
@@ -61,12 +62,12 @@ module.exports = {
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        // exclude: /node_modules/,
+                // exclude: /node_modules/,
                 loader: 'file-loader?limit=1024&name=fonts/[name].[hash].[ext]',
             },
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        // exclude: /node_modules/,
+                // exclude: /node_modules/,
                 loader: 'file-loader?limit=1024&name=fonts/[name].[hash].[ext]',
             },
         ],
@@ -95,6 +96,8 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
         }),
+
+        new FaviconsWebpackPlugin('public/favicon.png'),
     ],
 
 };

@@ -1,6 +1,11 @@
 @import '~bootstrap/less/bootstrap.less';
 @import '~bootstrap/less/variables.less';
+@import '~font-awesome/less/font-awesome.less';
 @import './colors';
+
+// GENERAL STYLESHEET
+@siteHeaderHeight: 125px;
+@smallerScreen: ~"(max-width: 992px)";
 
 html {
   height: 100%;
@@ -12,17 +17,94 @@ html {
     width: 100%;
     font-family: Lato;
     text-align: center;
+    font-size: 100%;
+    padding-top: @siteHeaderHeight;
   }
 
-  div, p, span, h1 {
-    color:#c3a343;
+  .gold {
+    color: @goldTextColour;
     background: linear-gradient(transparent, transparent), url('../img/goldfoil2.jpg') repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
   }
 
   h1 {
-    size: 150px;
+    font-size: 4.5em;
     letter-spacing: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+    text-outline: none;
+    color: @goldTextDarkerColour;
+
+    &:hover {
+      color: @goldTextColour;
+      text-decoration: none;
+    }
+
+    &:visited, &:active, &:link {
+      color: @goldTextDarkerColour;
+      text-decoration: none;
+    }
+  }
+}
+
+// INDEX TEMPLATE ELEMENTS
+
+.header-container {
+  padding: 0;
+
+  .site-header {
+    height: @siteHeaderHeight;
+    overflow: hidden;
+    background-color: white;
+    transition: height 0.25s ease-in-out;
+
+    h1 {
+      transition: font-size 0.25s ease-in-out;
+    }
+
+    .links {
+      width: 100%;
+      opacity: 1;
+      transition: opacity 0.15s ease-in-out;
+
+      .page-link {
+        font-size: 2em;
+        margin: 0 30px;
+      }
+    }
+
+    &.shrunk {
+      height: 75px;
+
+      h1 {
+        font-size: 3.5em;
+      }
+
+      .links {
+        opacity: 0;
+      }
+    }
+
+    @media @smallerScreen {
+      .shrunk;
+    }
+  }
+}
+
+.header-divider {
+  margin-top: 0;
+  transition: all 0.25s ease-in-out;
+
+  &.shrunk {
+    border-color: darken(@borderColour, 12%);
+    box-shadow: 0px 2px 7px 1px rgba(105,105,105,0.36);
+  }
+
+  @media @smallerScreen {
+    .shrunk;
   }
 }

@@ -5,7 +5,7 @@ import angular from 'angular';
 import '../public/less/app.less';
 
 // templates
-import aboutUsTemplate from './states/about_us/about_us.html';
+import ourStoryTemplate from './states/our_story/our_story.html';
 import homeTemplate from './states/home/home.html';
 import portfolioTemplate from './states/portfolio/portfolio.html';
 import pressTemplate from './states/press/press.html';
@@ -24,8 +24,9 @@ const libDependencies = [
 ];
 
 const appDependencies = [
+    require('./components/fix_and_shrink'),
     require('./components/main_controller'),
-    require('./states/about_us'),
+    require('./states/our_story'),
     require('./states/blog'),
     require('./states/contact_us'),
     require('./states/home'),
@@ -49,9 +50,9 @@ application.config(['$stateProvider', function ($stateProvider) {
             controller: 'HomeController',
             templateUrl: homeTemplate,
         })
-        .state('about-us', {
-            url: '/about-us',
-            templateUrl: aboutUsTemplate,
+        .state('our-story', {
+            url: '/our-story',
+            templateUrl: ourStoryTemplate,
         })
         .state('services', {
             url: '/services',

@@ -9,8 +9,7 @@
     "test:unit": "rimraf ./reports && karma start",
     "analyze": "webpack-bundle-analyzer ./build/stats.json"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Mayur Bapodra",
   "dependencies": {
     "angular": "^1.6.3",

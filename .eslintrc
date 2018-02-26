@@ -14,6 +14,7 @@
     "no-param-reassign": ["warn", {
       "props": false
     }],
+    "linebreak-style": ["error", "unix"],
     "max-len": ["warn", 160],
     "no-plusplus": ["off"],
     "no-unused-vars": ["warn", { "varsIgnorePattern": "[cC]ss" }],
@@ -35,6 +36,6 @@
     "window": true,
     "Image": true,
     "document": true,
-    "sinon": true,
+    "sinon": true
   }
 }

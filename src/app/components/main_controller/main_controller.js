@@ -1,11 +1,9 @@
-import menuTemplate from '../side_menu/side_menu.html';
-
 /* @ngInject */
 function MainController($scope, $rootScope, $state) {
-    $scope.menuIsOpen = false;
+    $scope.isMenuOpen = false;
 
     $scope.openMenu = function () {
-        $scope.menuIsOpen = true;
+        $scope.isMenuOpen = true;
     };
 
     $scope.isCurrentState = function (stateName) {

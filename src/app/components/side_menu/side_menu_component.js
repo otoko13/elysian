@@ -4,7 +4,8 @@ import css from './side_menu.less';
 const SideMenuComponent = {
     templateUrl,
     bindings: {
-        isOpen: '=',
+        isOpen: '<',
+        closeMenu: '&',
     },
     controllerAs: 'vm',
 };

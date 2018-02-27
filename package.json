@@ -4,13 +4,16 @@
   "scripts": {
     "build": "rimraf ./build && eslint *.js && webpack --config ./configuration/webpack.config.prod.js",
     "dev": "TASK=develop webpack-dev-server",
-    "develop": "webpack-dev-server --config ./configuration/webpack.config.develop.js --open",
+    "develop": "nodemon --watch configuration/webpack.config.common.js webpack-dev-server --config ./configuration/webpack.config.develop.js --open --display-entrypoints",
     "serve": "webpack --config ./webpack.config.prod.js -p --progress --profile --bail && http-server ./build -o",
     "test:unit": "rimraf ./reports && karma start",
     "analyze": "webpack-bundle-analyzer ./build/stats.json"
   },
   "keywords": [],
   "author": "Mayur Bapodra",
+  "description": "Elysian Events",
+  "repository": "git@github.com:otoko13/elysian.git",
+  "license": "none",
   "dependencies": {
     "angular": "^1.6.3",
     "angular-animate": "^1.6.3",
@@ -31,6 +34,7 @@
   },
   "devDependencies": {
     "angular-mocks": "^1.6.4",
+    "autoprefixer": "^8.0.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^6.4.1",
@@ -65,16 +69,19 @@
     "ng-annotate-webpack-plugin": "^0.2.1-pre",
     "ngtemplate-loader": "^1.3.1",
     "node-sass": "^4.5.2",
+    "nodemon": "^1.17.1",
     "phantomjs-polyfill-find": "ptim/phantomjs-polyfill-find",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^11.1.0",
     "postcss-loader": "^1.3.3",
     "rimraf": "^2.6.1",
     "sinon": "^2.2.0",
     "sinon-chai": "^2.10.0",
     "source-map-loader": "^0.2.1",
     "style-loader": "^0.16.1",
-    "webpack-bundle-analyzer": "^2.4.0",
-    "webpack-dev-server": "^2.4.2",
-    "webpack-md5-hash": "^0.0.5",
-    "webpack-merge": "^4.1.0"
+    "webpack-bundle-analyzer": "^2.11.0",
+    "webpack-dev-server": "^2.11.2",
+    "webpack-md5-hash": "^0.0.6",
+    "webpack-merge": "^4.1.2"
   }
 }

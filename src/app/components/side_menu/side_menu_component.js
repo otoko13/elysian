@@ -8,6 +8,7 @@ const SideMenuComponent = {
         closeMenu: '&',
     },
     controllerAs: 'vm',
+    controller: 'SideMenuComponentController',
 };
 
 module.exports = SideMenuComponent;

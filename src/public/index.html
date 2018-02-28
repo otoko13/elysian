@@ -12,11 +12,11 @@
 
     <body ng-controller="MainController">
     <div class="container-fluid navbar-fixed-top header-container">
-        <side-menu is-open="vm.isMenuOpen" close-menu="closeMenu()"></side-menu>
+        <side-menu is-open="vm.isMenuOpen" close-menu="closeSideMenu()"></side-menu>
         <div class="row">
             <div class="col-md-12">
                 <div class="site-header" fix-and-shrink top="125">
-                    <div class="pull-left hamburger-container" ng-click="openMenu()">
+                    <div class="pull-left hamburger-container" ng-click="openSideMenu()">
                         <i class="fa fa-bars"></i>
                     </div>
                     <h1 class="gold">ELYSIAN EVENTS</h1>

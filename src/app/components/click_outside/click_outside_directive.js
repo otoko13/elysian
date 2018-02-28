@@ -8,6 +8,7 @@ function ClickOutsideDirective() {
         },
         restrict: 'A',
         link: (scope, element) => {
+            // select not element - otherwise the clickOutside is called on opening the menu too
             $('html').click(() => {
                 scope.clickOutside();
             });

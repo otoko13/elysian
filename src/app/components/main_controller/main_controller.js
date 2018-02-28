@@ -4,11 +4,11 @@ function MainController($scope, $rootScope, $state) {
         isMenuOpen: false,
     };
 
-    $scope.openMenu = function () {
+    $scope.openSideMenu = function () {
         $scope.vm.isMenuOpen = true;
     };
 
-    $scope.closeMenu = function () {
+    $scope.closeSideMenu = function () {
         $scope.vm.isMenuOpen = false;
     };
 

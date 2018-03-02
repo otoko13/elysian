@@ -34,6 +34,10 @@
 
   @media @mobileScreen {
     width: 100vw;
-    left: -100vw;
+    transform: translate3d(-102vw, 0, 0);
+
+    &.open {
+      transform: translate3d(0, 0, 0);
+    }
   }
 }

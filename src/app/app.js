@@ -2,11 +2,11 @@ import _ from 'lodash';
 import angular from 'angular';
 
 // libraries
-import 'angular-ui-bootstrap';
-import 'angular-ui-router';
+import uiBootstrap from 'angular-ui-bootstrap';
+import uiRouter from 'angular-ui-router';
 
 // CSS
-import '../public/less/app.less';
+import css from '../public/less/app.less';
 
 // templates
 import ourStoryTemplate from './states/our_story/our_story.html';
@@ -19,8 +19,8 @@ import contactUsTemplate from './states/contact_us/contact_us.html';
 
 /* eslint-disable */
 const libDependencies = [
-    'ui.router',
-    'ui.bootstrap',
+    uiRouter,
+    uiBootstrap,
 ];
 
 const appDependencies = [
@@ -45,7 +45,6 @@ application.config(['$urlRouterProvider', function ($urlRouterProvider) {
 }]);
 
 application.config(['$stateProvider', function ($stateProvider) {
-    // $locationProvider.html5Mode(true).hashPrefix('');
     $stateProvider
         .state('home', {
             url: '/',

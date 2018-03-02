@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html class="ng-cloak" ng-app="elysian">
+<html ng-cloak ng-app="elysian">
     <head>
         <base href="/">
         <title>Elysian Events</title>
         <meta charset="utf-8">
         <meta name="description" content="Elysian Events"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
     </head>
@@ -24,12 +24,12 @@
                     </div>
                     <h1 class="gold">ELYSIAN EVENTS</h1>
                     <div class="links">
-                        <a class="page-link" ui-sref=".home" ng-class="isCurrentState('home')">Home</a>
-                        <a class="page-link" ui-sref=".our-story" ng-class="isCurrentState('our-story')">Our Story</a>
-                        <a class="page-link" ui-sref=".services" ng-class="isCurrentState('services')">Services</a>
-                        <a class="page-link" ui-sref=".portfolio" ng-class="isCurrentState('portfolio')">Portfolio</a>
-                        <a class="page-link" ui-sref=".press" ng-class="isCurrentState('press')">Press</a>
-                        <a class="page-link" ui-sref=".contact-us" ng-class="isCurrentState('contact-us')">Contact Us</a>
+                        <a class="page-link" ui-sref=".home" ng-class="{'current': isCurrentState('home')}">Home</a>
+                        <a class="page-link" ui-sref=".our-story" ng-class="{'current': isCurrentState('our-story')}">Our Story</a>
+                        <a class="page-link" ui-sref=".services" ng-class="{'current': isCurrentState('services')}">Services</a>
+                        <a class="page-link" ui-sref=".portfolio" ng-class="{'current': isCurrentState('portfolio')}">Portfolio</a>
+                        <a class="page-link" ui-sref=".press" ng-class="{'current': isCurrentState('press')}">Press</a>
+                        <a class="page-link" ui-sref=".contact-us" ng-class="{'current': isCurrentState('contact-us')}">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="container-fluid">
         <div class="site-content row">
-            <div class="col-md-12">
+            <div class="col-md-10 col-md-offset-1">
                 <ui-view></ui-view>
             </div>
         </div>

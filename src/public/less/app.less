@@ -23,7 +23,7 @@ html {
   }
 
   .gold {
-    color: @goldTextColour;
+    color: @goldTextDarkerColour;
     background: linear-gradient(transparent, transparent), url('../img/goldfoil2.jpg') repeat;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -32,6 +32,20 @@ html {
   h1 {
     font-size: 4.5em;
     letter-spacing: 10px;
+  }
+
+  h2 {
+    font-size: 3em;
+    width: 100%;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+    border-color: @borderColour;
+    text-align: left;
+    color: @goldTextColour;
+
+    &.right {
+      text-align: right;
+    }
   }
 
   a {
@@ -57,6 +71,27 @@ html {
 .header-container {
   padding: 0;
 
+  .site-header-shrunk {
+    height: @shrunkSiteHeaderHeight;
+
+    h1 {
+      font-size: 3.5em;
+    }
+
+    .links {
+      opacity: 0;
+    }
+
+    .hamburger-container {
+      opacity: 1;
+
+      &.hidden {
+        opacity: 0;
+        pointer-events: none;
+      }
+    }
+  }
+
   .site-header {
     position: relative;
     height: @siteHeaderHeight;
@@ -65,7 +100,7 @@ html {
     transition: height 0.25s ease-in-out;
 
     @media @smallerScreen {
-      .shrunk;
+      .site-header-shrunk();
     }
 
     h1 {
@@ -95,24 +130,7 @@ html {
     }
 
     &.shrunk {
-      height: @shrunkSiteHeaderHeight;
-
-      h1 {
-        font-size: 3.5em;
-      }
-
-      .links {
-        opacity: 0;
-      }
-
-      .hamburger-container {
-        opacity: 1;
-
-        &.hidden {
-          opacity: 0;
-          pointer-events: none;
-        }
-      }
+      .site-header-shrunk();
     }
   }
 }
@@ -121,12 +139,16 @@ html {
   margin-top: 0;
   transition: all 0.25s ease-in-out;
 
-  &.shrunk {
+  .header-divider-shrunk {
     border-color: darken(@borderColour, 12%);
     box-shadow: 0 2px 7px 1px rgba(105,105,105,0.36);
   }
 
+  &.shrunk {
+    .header-divider-shrunk();
+  }
+
   @media @smallerScreen {
-    .shrunk;
+    .header-divider-shrunk();
   }
 }

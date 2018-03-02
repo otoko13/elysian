@@ -16,8 +16,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="site-header" fix-and-shrink top="125" unshrunk-callback="closeSideMenu()">
-                    <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()">
+                    <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()" ng-class="{'hidden': isMenuOpen}">
                         <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="pull-left hamburger-container menu-closer" ng-click="closeSideMenu()" ng-class="{'hidden': !isMenuOpen}">
+                        X
                     </div>
                     <h1 class="gold">ELYSIAN EVENTS</h1>
                     <div class="links">

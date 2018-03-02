@@ -1,19 +1,23 @@
 import $ from 'jquery';
 
 /* @ngInject */
-function ClickOutsideDirective() {
+function ClickOutsideDirective($document) {
     return {
         scope: {
             clickOutside: '&',
+            exceptSelector: '=',
         },
         restrict: 'A',
         link: (scope, element) => {
             // select not element - otherwise the clickOutside is called on opening the menu too
-            $('html').click(() => {
-                scope.clickOutside();
+            $document.on('click', (event) => {
+                if (!$.contains($(scope.exceptSelector).get(0), event.target)) {
+                    scope.clickOutside();
+                    scope.$apply();
+                }
             });
 
-            element.click((event) => {
+            element.on('click', (event) => {
                 event.stopPropagation();
             });
         },

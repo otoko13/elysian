@@ -1,11 +1,11 @@
 import templateUrl from './side_menu.html';
-import css from './side_menu.less';
+import './side_menu.less';
 
 const SideMenuComponent = {
     templateUrl,
     bindings: {
-        isOpen: '<',
-        closeMenu: '&',
+        options: '<',
+        closeMenu: '<',
     },
     controllerAs: 'vm',
     controller: 'SideMenuComponentController',

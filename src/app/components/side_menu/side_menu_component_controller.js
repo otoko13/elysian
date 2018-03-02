@@ -1,12 +1,15 @@
-import _ from 'lodash';
-
 class SideMenuComponentController {
 
-    /* @ngInject */
-    constructor() {
-        if (_.isUndefined(this.isOpen)) {
-            this.isOpen = false;
-        }
+    $onInit() {
+        console.log(`INIT: ${this.options.isOpen}`);
+    }
+
+    $onChanges() {
+        console.log(`CHANGES: ${this.options.isOpen}`);
+    }
+
+    $doCheck() {
+        console.log(`CHECK: ${this.options.isOpen}`);
     }
 }
 

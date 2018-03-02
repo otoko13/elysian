@@ -4,11 +4,10 @@ import './side_menu.less';
 const SideMenuComponent = {
     templateUrl,
     bindings: {
-        options: '<',
-        closeMenu: '<',
+        isOpen: '=',
+        closeMenu: '&',
     },
     controllerAs: 'vm',
-    controller: 'SideMenuComponentController',
 };
 
 module.exports = SideMenuComponent;

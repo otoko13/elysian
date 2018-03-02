@@ -1,15 +1,13 @@
 /* @ngInject */
 function MainController($scope, $rootScope, $state) {
-    $scope.menuOptions = {
-        isOpen: false,
-    };
+    $scope.isMenuOpen = false;
 
     $scope.openSideMenu = function () {
-        $scope.menuOptions.isOpen = true;
+        $scope.isMenuOpen = true;
     };
 
     $scope.closeSideMenu = function () {
-        $scope.menuOptions.isOpen = false;
+        $scope.isMenuOpen = false;
     };
 
     $scope.isCurrentState = function (stateName) {

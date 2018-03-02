@@ -1,11 +1,8 @@
 @import '~bootstrap/less/bootstrap.less';
 @import '~bootstrap/less/variables.less';
 @import '~font-awesome/less/font-awesome.less';
-@import './colors';
+@import './common';
 @import './media';
-
-// GENERAL STYLESHEET
-@siteHeaderHeight: 125px;
 
 html {
   height: 100%;
@@ -94,11 +91,11 @@ html {
       font-size: 2.8em;
       opacity: 0;
       cursor: pointer;
-      transition: opacity 0.4s ease-in;
+      transition: opacity 0.3s ease-in;
     }
 
     &.shrunk {
-      height: 75px;
+      height: @shrunkSiteHeaderHeight;
 
       h1 {
         font-size: 3.5em;

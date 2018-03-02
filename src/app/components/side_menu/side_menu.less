@@ -1,5 +1,5 @@
 @import '../../../public/less/media';
-@import '../../../public/less/colors';
+@import '../../../public/less/common';
 
 .side-menu {
   position: absolute;
@@ -16,6 +16,16 @@
   .inner-container {
     width: 100%;
     height: 100%;
+    padding-top: @shrunkSiteHeaderHeight + 25px;
+
+    .page-link {
+      display: block;
+      text-align: center;
+      width: 100%;
+      font-size: 2.5em;
+      margin: 20px 0;
+      padding: 5px 0;
+    }
   }
 
   &.open {

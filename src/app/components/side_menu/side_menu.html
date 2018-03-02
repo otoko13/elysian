@@ -1,4 +1,10 @@
 <div class="side-menu" ng-class="{'open': vm.isOpen}" click-outside="vm.closeMenu()" except-selector="'.menu-opener'">
     <div class="inner-container">
+        <a class="page-link" ui-sref=".home" ng-class="isCurrentState('home')">Home</a>
+        <a class="page-link" ui-sref=".our-story" ng-class="isCurrentState('our-story')">Our Story</a>
+        <a class="page-link" ui-sref=".services" ng-class="isCurrentState('services')">Services</a>
+        <a class="page-link" ui-sref=".portfolio" ng-class="isCurrentState('portfolio')">Portfolio</a>
+        <a class="page-link" ui-sref=".press" ng-class="isCurrentState('press')">Press</a>
+        <a class="page-link" ui-sref=".contact-us" ng-class="isCurrentState('contact-us')">Contact Us</a>
     </div>
 </div>

@@ -15,7 +15,7 @@
         <side-menu is-open="isMenuOpen" close-menu="closeSideMenu()"></side-menu>
         <div class="row">
             <div class="col-md-12">
-                <div class="site-header" fix-and-shrink top="125">
+                <div class="site-header" fix-and-shrink top="125" unshrunk-callback="closeSideMenu()">
                     <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()">
                         <i class="fa fa-bars"></i>
                     </div>

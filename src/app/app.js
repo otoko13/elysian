@@ -82,7 +82,3 @@ application.config(['$stateProvider', function ($stateProvider) {
 application.run(($rootScope) => {
     $rootScope.applicationReady = true;
 });
-
-angular.element(document).ready(() => {
-    angular.bootstrap(document, ['elysian']);
-});

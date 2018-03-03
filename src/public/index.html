@@ -12,7 +12,7 @@
 
     <body ng-controller="MainController">
     <nav class="navbar-fixed-top header-container">
-        <side-menu is-open="isMenuOpen" close-menu="closeSideMenu()"></side-menu>
+        <side-menu is-open="isMenuOpen" close-menu="closeSideMenu()" is-current-state="isCurrentState"></side-menu>
         <div class="site-header" on-scroll-down top="125" unshrunk-callback="closeSideMenu()">
             <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()" ng-class="{'hidden': isMenuOpen}">
                 <i class="fa fa-bars"></i>

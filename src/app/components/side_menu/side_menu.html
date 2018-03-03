@@ -1,10 +1,22 @@
 <div class="side-menu" ng-class="{'open': vm.isOpen}" click-outside="vm.closeMenu()" except-selector="'.menu-opener'">
     <div class="inner-container">
-        <a class="page-link" ui-sref=".home" ng-class="isCurrentState('home')">Home</a>
-        <a class="page-link" ui-sref=".our-story" ng-class="isCurrentState('our-story')">Our Story</a>
-        <a class="page-link" ui-sref=".services" ng-class="isCurrentState('services')">Services</a>
-        <a class="page-link" ui-sref=".portfolio" ng-class="isCurrentState('portfolio')">Portfolio</a>
-        <a class="page-link" ui-sref=".press" ng-class="isCurrentState('press')">Press</a>
-        <a class="page-link" ui-sref=".contact-us" ng-class="isCurrentState('contact-us')">Contact Us</a>
+        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('home')}">
+            <a class="page-link" ui-sref=".home">Home</a>
+        </div>
+        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('our-story')}">
+            <a class="page-link" ui-sref=".our-story">Our Story</a>
+        </div>
+        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('services')}">
+            <a class="page-link" ui-sref=".services">Services</a>
+        </div>
+        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('portfolio')}">
+            <a class="page-link" ui-sref=".portfolio">Portfolio</a>
+        </div>
+        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('press')}">
+            <a class="page-link" ui-sref=".press">Press</a>
+        </div>
+        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('contact-us')}">
+            <a class="page-link" ui-sref=".contact-us">Contact Us</a>
+        </div>
     </div>
 </div>

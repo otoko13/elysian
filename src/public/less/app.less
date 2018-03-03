@@ -134,9 +134,40 @@ html {
       opacity: 1;
       transition: opacity 0.15s ease-in-out;
 
-      .page-link {
-        font-size: 2em;
+      .link-container {
+        display: inline-block;
         margin: 0 30px;
+        position: relative;
+
+        &.is-current {
+          &:before {
+            border-color: @goldTextDarkerColour;
+            opacity: 0.4 !important;
+          }
+        }
+
+        &:before {
+          content: '';
+          border: 3px solid @goldTextColour;
+          width: 44px;
+          height: 44px;
+          border-radius: 36px;
+          position: absolute;
+          opacity: 0;
+          display: inline-block;
+          top: -5px;
+          left: ~"calc(50% - 22px)";
+          transition: opacity 0.25s ease-out;
+          pointer-events: none;
+        }
+
+        &:hover:before {
+          opacity: 0.2;
+        }
+
+        .page-link {
+          font-size: 2em;
+        }
       }
     }
 

@@ -11,7 +11,7 @@ function MainController($scope, $rootScope, $state) {
     };
 
     $scope.isCurrentState = function (stateName) {
-        return $state.includes(stateName);
+        return $state.current.name === stateName;
     };
 
     $rootScope.$on('$stateChangeSuccess', (event, toState) => {

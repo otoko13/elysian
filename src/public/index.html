@@ -22,12 +22,24 @@
             </div>
             <h1 class="gold">ELYSIAN EVENTS</h1>
             <div class="links">
-                <a class="page-link" ui-sref=".home" ng-class="{'current': isCurrentState('home')}">Home</a>
-                <a class="page-link" ui-sref=".our-story" ng-class="{'current': isCurrentState('our-story')}">Our Story</a>
-                <a class="page-link" ui-sref=".services" ng-class="{'current': isCurrentState('services')}">Services</a>
-                <a class="page-link" ui-sref=".portfolio" ng-class="{'current': isCurrentState('portfolio')}">Portfolio</a>
-                <a class="page-link" ui-sref=".press" ng-class="{'current': isCurrentState('press')}">Press</a>
-                <a class="page-link" ui-sref=".contact-us" ng-class="{'current': isCurrentState('contact-us')}">Contact Us</a>
+                <div class="link-container" ng-class="{'is-current': isCurrentState('home')}">
+                    <a class="page-link" ui-sref=".home">Home</a>
+                </div>
+                <div class="link-container" ng-class="{'is-current': isCurrentState('our-story')}">
+                    <a class="page-link" ui-sref=".our-story">Our Story</a>
+                </div>
+                <div class="link-container" ng-class="{'is-current': isCurrentState('services')}">
+                    <a class="page-link" ui-sref=".services">Services</a>
+                </div>
+                <div class="link-container" ng-class="{'is-current': isCurrentState('portfolio')}">
+                    <a class="page-link" ui-sref=".portfolio">Portfolio</a>
+                </div>
+                <div class="link-container" ng-class="{'is-current': isCurrentState('press')}">
+                    <a class="page-link" ui-sref=".press">Press</a>
+                </div>
+                <div class="link-container" ng-class="{'is-current': isCurrentState('contact-us')}">
+                    <a class="page-link" ui-sref=".contact-us">Contact Us</a>
+                </div>
             </div>
         </div>
         <hr class="header-divider" on-scroll-down top="125">

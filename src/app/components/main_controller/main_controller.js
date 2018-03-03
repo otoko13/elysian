@@ -16,6 +16,7 @@ function MainController($scope, $rootScope, $state) {
 
     $rootScope.$on('$stateChangeSuccess', (event, toState) => {
         $scope.currentState = toState;
+        $scope.isMenuOpen = false;
     });
 }
 

@@ -31,11 +31,27 @@ html {
     }
   }
 
+
+
   .gold {
     color: @goldTextDarkerColour;
-    background: linear-gradient(transparent, transparent), url('../img/goldfoil2.jpg') repeat;
+    background: linear-gradient(transparent, transparent), url('../img/goldfoil3.jpg') repeat;
+    background-size: 200%;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    animation: animGold 100s ease-in-out infinite;
+
+    @keyframes animGold {
+      0% {
+        background-position: 99% 0;
+      }
+      25% {
+        background-position: 1% 0;
+      }
+      75% {
+        background-position: 99% 0;
+      }
+    }
   }
 
   h1 {

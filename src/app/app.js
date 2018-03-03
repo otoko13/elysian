@@ -6,7 +6,7 @@ import uiBootstrap from 'angular-ui-bootstrap';
 import uiRouter from 'angular-ui-router';
 
 // CSS
-import css from '../public/less/app.less';
+import '../public/less/app.less';
 
 // templates
 import ourStoryTemplate from './states/our_story/our_story.html';

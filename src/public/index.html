@@ -5,33 +5,29 @@
         <title>Elysian Events</title>
         <meta charset="utf-8">
         <meta name="description" content="Elysian Events"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
     </head>
 
     <body ng-controller="MainController">
-    <nav class="navbar-fixed-top header-container container-fluid">
+    <nav class="navbar-fixed-top header-container">
         <side-menu is-open="isMenuOpen" close-menu="closeSideMenu()"></side-menu>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="site-header" fix-and-shrink top="125" unshrunk-callback="closeSideMenu()">
-                    <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()" ng-class="{'hidden': isMenuOpen}">
-                        <i class="fa fa-bars"></i>
-                    </div>
-                    <div class="pull-left hamburger-container menu-closer" ng-click="closeSideMenu()" ng-class="{'hidden': !isMenuOpen}">
-                        <i class="fa fa-times"></i>
-                    </div>
-                    <h1 class="gold">ELYSIAN EVENTS</h1>
-                    <div class="links">
-                        <a class="page-link" ui-sref=".home" ng-class="{'current': isCurrentState('home')}">Home</a>
-                        <a class="page-link" ui-sref=".our-story" ng-class="{'current': isCurrentState('our-story')}">Our Story</a>
-                        <a class="page-link" ui-sref=".services" ng-class="{'current': isCurrentState('services')}">Services</a>
-                        <a class="page-link" ui-sref=".portfolio" ng-class="{'current': isCurrentState('portfolio')}">Portfolio</a>
-                        <a class="page-link" ui-sref=".press" ng-class="{'current': isCurrentState('press')}">Press</a>
-                        <a class="page-link" ui-sref=".contact-us" ng-class="{'current': isCurrentState('contact-us')}">Contact Us</a>
-                    </div>
-                </div>
+        <div class="site-header" fix-and-shrink top="125" unshrunk-callback="closeSideMenu()">
+            <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()" ng-class="{'hidden': isMenuOpen}">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="pull-left hamburger-container menu-closer" ng-click="closeSideMenu()" ng-class="{'hidden': !isMenuOpen}">
+                <i class="fa fa-times"></i>
+            </div>
+            <h1 class="gold">ELYSIAN EVENTS</h1>
+            <div class="links">
+                <a class="page-link" ui-sref=".home" ng-class="{'current': isCurrentState('home')}">Home</a>
+                <a class="page-link" ui-sref=".our-story" ng-class="{'current': isCurrentState('our-story')}">Our Story</a>
+                <a class="page-link" ui-sref=".services" ng-class="{'current': isCurrentState('services')}">Services</a>
+                <a class="page-link" ui-sref=".portfolio" ng-class="{'current': isCurrentState('portfolio')}">Portfolio</a>
+                <a class="page-link" ui-sref=".press" ng-class="{'current': isCurrentState('press')}">Press</a>
+                <a class="page-link" ui-sref=".contact-us" ng-class="{'current': isCurrentState('contact-us')}">Contact Us</a>
             </div>
         </div>
         <hr class="header-divider" fix-and-shrink top="125">

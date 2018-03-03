@@ -4,6 +4,15 @@
 @import './common';
 @import './media';
 
+// FIXING BOOTSTRAP ISSUES
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -71,6 +80,7 @@ html {
 .header-container {
   padding: 0;
 
+  // MIXIN
   .site-header-shrunk {
     height: @shrunkSiteHeaderHeight;
 
@@ -93,15 +103,11 @@ html {
   }
 
   .site-header {
-    position: relative;
+    //position: relative;
     height: @siteHeaderHeight;
     overflow: hidden;
     background-color: white;
     transition: height 0.25s ease-in-out;
-
-    @media @smallerScreen {
-      .site-header-shrunk();
-    }
 
     h1 {
       transition: font-size 0.25s ease-in-out;
@@ -131,6 +137,15 @@ html {
 
     &.shrunk {
       .site-header-shrunk();
+    }
+
+    @media @smallerScreen {
+      .site-header-shrunk();
+
+      h1 {
+        text-align: right;
+        padding-right: 35px;
+      }
     }
   }
 }

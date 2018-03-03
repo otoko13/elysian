@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 /* @ngInject */
-function FixAndShrinkDirective() {
+function OnScrollDownDirective() {
     return {
         scope: {
             top: '=',
@@ -23,4 +23,4 @@ function FixAndShrinkDirective() {
     };
 }
 
-module.exports = FixAndShrinkDirective;
+module.exports = OnScrollDownDirective;

@@ -25,7 +25,7 @@ const libDependencies = [
 
 const appDependencies = [
     require('./components/click_outside'),
-    require('./components/fix_and_shrink'),
+    require('./components/on_scroll_down'),
     require('./components/main_controller'),
     require('./components/side_menu'),
     require('./states/our_story'),

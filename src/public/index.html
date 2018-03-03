@@ -13,7 +13,7 @@
     <body ng-controller="MainController">
     <nav class="navbar-fixed-top header-container">
         <side-menu is-open="isMenuOpen" close-menu="closeSideMenu()"></side-menu>
-        <div class="site-header" fix-and-shrink top="125" unshrunk-callback="closeSideMenu()">
+        <div class="site-header" on-scroll-down top="125" unshrunk-callback="closeSideMenu()">
             <div class="pull-left hamburger-container menu-opener" ng-click="openSideMenu()" ng-class="{'hidden': isMenuOpen}">
                 <i class="fa fa-bars"></i>
             </div>
@@ -30,7 +30,7 @@
                 <a class="page-link" ui-sref=".contact-us" ng-class="{'current': isCurrentState('contact-us')}">Contact Us</a>
             </div>
         </div>
-        <hr class="header-divider" fix-and-shrink top="125">
+        <hr class="header-divider" on-scroll-down top="125">
     </nav>
     <div class="container-fluid">
         <div class="site-content row">

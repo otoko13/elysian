@@ -23,14 +23,19 @@
 
       &.is-current {
         &:before {
-          border-color: @goldTextDarkerColour;
-          opacity: 0.4 !important;
+          border-color: @highlightColour;
+          opacity: 0.45 !important;
+        }
+        &:hover {
+          &:before {
+            opacity: 0.45 !important;
+          }
         }
       }
 
       &:before {
         content: '';
-        border: 3px solid @goldTextColour;
+        border: 3px solid @highlightColour;
         width: 44px;
         height: 44px;
         border-radius: 36px;

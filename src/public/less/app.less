@@ -143,17 +143,17 @@ html {
 
         &.is-current {
           &:before {
-            border-color: @goldTextDarkerColour;
-            opacity: 0.25;
-            background: linear-gradient(transparent, transparent), url('../img/goldfoil3.jpg');
-            background-size: 200%;
-            animation: animGold 20s linear infinite;
+            border-color: @highlightColour;
+            opacity: 0.45;
+            //background: linear-gradient(transparent, transparent), url('../img/goldfoil3.jpg');
+            //background-size: 200%;
+            //animation: animGold 20s linear infinite;
           }
         }
 
         &:before {
           content: '';
-          border: 1px solid @goldTextColour;
+          border: 3px solid @highlightColour;
           width: 44px;
           height: 44px;
           border-radius: 36px;

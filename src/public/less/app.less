@@ -141,37 +141,37 @@ html {
         margin: 0 30px;
         position: relative;
 
-        &.is-current {
-          &:before {
-            border-color: @highlightColour;
-            opacity: 0.45;
-            //background: linear-gradient(transparent, transparent), url('../img/goldfoil3.jpg');
-            //background-size: 200%;
-            //animation: animGold 20s linear infinite;
-          }
-        }
-
-        &:before {
-          content: '';
-          border: 3px solid @highlightColour;
-          width: 44px;
-          height: 44px;
-          border-radius: 36px;
-          position: absolute;
-          opacity: 0;
-          display: inline-block;
-          top: -5px;
-          left: ~"calc(50% - 22px)";
-          transition: opacity 0.25s ease-out;
-          pointer-events: none;
-        }
-
-        &:hover:before {
-          opacity: 0.2;
-        }
-
         .page-link {
           font-size: 2em;
+
+          &.is-current {
+            &:after, &:hover:after {
+              background: linear-gradient(transparent, transparent), url('../img/goldfoil3.jpg');
+              background-size: 200%;
+              animation: animGold 20s linear infinite;
+              width: 100%;
+              opacity: 1;
+            }
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            margin: 4px auto auto auto;
+            height: 2px;
+            width: 0;
+            opacity: 0;
+            border-radius: 2px;
+            background: transparent;
+            transition: all 0.25s ease-out;
+            pointer-events: none;
+          }
+
+          &:hover:after {
+            background-color: @goldTextColour;
+            width: 100%;
+            opacity: 1;
+          }
         }
       }
     }

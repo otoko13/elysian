@@ -1,22 +1,22 @@
 <div class="side-menu" ng-class="{'open': vm.isOpen}" click-outside="vm.closeMenu()" except-selector="'.menu-opener'">
     <div class="inner-container">
-        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('home')}">
-            <a class="page-link" ui-sref=".home">Home</a>
+        <div class="link-container">
+            <a class="page-link" ui-sref=".home" ng-class="{'is-current': vm.isCurrentState('home')}">Home</a>
         </div>
-        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('our-story')}">
-            <a class="page-link" ui-sref=".our-story">Our Story</a>
+        <div class="link-container">
+            <a class="page-link" ui-sref=".our-story" ng-class="{'is-current': vm.isCurrentState('our-story')}">Our Story</a>
         </div>
-        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('services')}">
-            <a class="page-link" ui-sref=".services">Services</a>
+        <div class="link-container">
+            <a class="page-link" ui-sref=".services" ng-class="{'is-current': vm.isCurrentState('services')}">Services</a>
         </div>
-        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('portfolio')}">
-            <a class="page-link" ui-sref=".portfolio">Portfolio</a>
+        <div class="link-container">
+            <a class="page-link" ui-sref=".portfolio" ng-class="{'is-current': vm.isCurrentState('portfolio')}">Portfolio</a>
         </div>
-        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('press')}">
-            <a class="page-link" ui-sref=".press">Press</a>
+        <div class="link-container">
+            <a class="page-link" ui-sref=".press" ng-class="{'is-current': vm.isCurrentState('press')}">Press</a>
         </div>
-        <div class="link-container" ng-class="{'is-current': vm.isCurrentState('contact-us')}">
-            <a class="page-link" ui-sref=".contact-us">Contact Us</a>
+        <div class="link-container">
+            <a class="page-link" ui-sref=".contact-us" ng-class="{'is-current': vm.isCurrentState('contact-us')}">Contact Us</a>
         </div>
     </div>
 </div>

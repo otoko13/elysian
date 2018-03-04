@@ -1,3 +1,46 @@
 <div class="contact-us">
-    Contact Us
+    <div>
+        <form name="contactForm">
+            <input type="email"
+                   name="email"
+                   ng-model="emailAddress"
+                   class="email-input"
+                   ng-class="{'errored' : contactForm.email.$error}"
+                   minlength="6"
+                   ng-readonly="submitted && success">
+            <textarea ng-model="comment"
+                      name="commentArea"
+                      class="comment-text-area"
+                      ng-class="{'errored' : contactForm.commentArea.$error}"
+                      minlength="10"
+                      maxlength="1000"
+                      ng-readonly="submitted && success">
+            </textarea>
+        </form>
+
+        <p>{{1000 - contactForm.commentArea.$viewValue.length}} characters remaining</p>
+
+        <button type="button"
+                class="btn btn-primary"
+                ng-click="submitComment()"
+                ng-disabled="(contactForm.email.$dirty && contactForm.email.$invalid) || (contactForm.commentArea.$dirty && contactForm.commentArea.$invalid)"
+                ng-show="!loading && !submitted">
+            Send
+        </button>
+
+        <i class="fa fa-spin fa-spinner" ng-show="loading" />
+
+        <div class="alert alert-success" role="alert" ng-show="submitted && !loading && success">
+            <strong>
+                <i class="fa fa-2x fa-check-circle-o" style="vertical-align: middle"></i>&nbsp;Your comment was successfully submitted.
+            </strong>
+            Thank you for your feedback.
+        </div>
+        <div class="alert alert-danger" role="alert" ng-show="submitted && !loading && !success">
+            <strong>
+                <i class="fa fa-2x fa-times-circle-o" style="vertical-align: middle"></i>&nbsp;We're sorry, there was a problem submitting your comment.
+            </strong>
+            Please try again later.
+        </div>
+    </div>
 </div>

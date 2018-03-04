@@ -38,10 +38,12 @@ html {
     font-family: Lato;
     text-align: center;
     font-size: 100%;
-    padding-top: @siteHeaderHeight;
+    padding-top: @siteHeaderHeight + 30px;
+    padding-bottom: 30px;
 
     @media @smallerScreen {
       font-size: 75%;
+      padding-top: @shrunkSiteHeaderHeight + 20px;
     }
   }
 
@@ -59,6 +61,7 @@ html {
   h1 {
     font-size: 4.5em;
     letter-spacing: 10px;
+    min-width: 500px;
   }
 
   h2 {
@@ -128,7 +131,7 @@ html {
     transition: height 0.25s ease-in-out;
 
     h1 {
-      transition: font-size 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
     }
 
     .links {
@@ -197,6 +200,7 @@ html {
       h1 {
         text-align: right;
         padding-right: 35px;
+        margin-top: 24px;
       }
 
       .hamburger-container {
@@ -225,5 +229,14 @@ html {
 }
 
 .site-content {
-  min-width: 600px;
+  width: 992px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  background: red;
+  padding: 20px;
+
+  @media @smallerScreen {
+    width: 100%;
+  }
 }

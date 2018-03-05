@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import angular from 'angular';
+import 'jquery';
 
 // libraries
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -16,6 +17,14 @@ import pressTemplate from './states/press/press.html';
 import servicesTemplate from './states/services/services.html';
 import blogTemplate from './states/blog/blog.html';
 import contactUsTemplate from './states/contact_us/contact_us.html';
+
+import './plugins';
+import ug from '../../node_modules/unitegallery/dist/js/unitegallery';
+
+require('../../node_modules/unitegallery/dist/css/unite-gallery.css');
+require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default');
+require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default.css');
+require('../../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid');
 
 /* eslint-disable */
 const libDependencies = [
@@ -61,6 +70,7 @@ application.config(['$stateProvider', function ($stateProvider) {
         })
         .state('portfolio', {
             url: '/portfolio',
+            controller: 'PortfolioController',
             templateUrl: portfolioTemplate,
         })
         .state('press', {

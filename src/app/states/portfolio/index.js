@@ -1,5 +1,6 @@
 import angular from 'angular';
-import css from './portfolio.less';
+import './portfolio.less';
 
 module.exports = angular.module('states.portfolio', [])
+    .controller('PortfolioController', require('./portfolio_controller'))
     .name;

@@ -27,6 +27,7 @@
     "jquery": "^3.2.1",
     "lodash": "^4.17.5",
     "oclazyload": "^1.1.0",
+    "unitegallery": "1.7.28",
     "webpack": "^2.7.0",
     "webpack-config": "^7.0.0"
   },

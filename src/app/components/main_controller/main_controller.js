@@ -1,3 +1,4 @@
+
 /* @ngInject */
 function MainController($scope, $rootScope, $state) {
     $scope.isMenuOpen = false;

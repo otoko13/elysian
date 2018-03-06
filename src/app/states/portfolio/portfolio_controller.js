@@ -9,15 +9,16 @@ import '../../../../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-til
 function PortfolioController($document, $timeout) {
     $document.ready(() => {
         $timeout(() => {
-            $('#gallery').unitegallery({
-                gallery_theme: 'tilesgrid',
-                tile_enable_icons: false,
-                tile_width: 114,
-                tile_height: 100,
-                tile_enable_border: false,
-                grid_num_rows: 10000,
-                grid_space_between_cols: 10,
-            });
+            // $('#gallery').unitegallery({
+            //     gallery_theme: 'default',
+            //     tile_enable_icons: false,
+            //     tile_width: 114,
+            //     tile_height: 100,
+            //     tile_enable_border: false,
+            //     grid_num_rows: 10000,
+            //     grid_space_between_cols: 10,
+            // });
+            $('#gallery').unitegallery();
         });
     });
 }

@@ -1,6 +1,7 @@
 {
   "name": "elysian",
   "version": "0.0.0",
+  "license": "none",
   "scripts": {
     "build": "rimraf ./build && eslint *.js && webpack --config ./configuration/webpack.config.prod.js",
     "dev": "TASK=develop webpack-dev-server",
@@ -14,7 +15,6 @@
   "author": "Mayur Bapodra",
   "description": "Elysian Events",
   "repository": "git@github.com:otoko13/elysian.git",
-  "license": "none",
   "dependencies": {
     "angular": "^1.6.3",
     "angular-animate": "^1.6.3",
@@ -46,10 +46,12 @@
     "eslint-config-airbnb-base": "^11.1.1",
     "eslint-loader": "^1.7.0",
     "eslint-plugin-import": "^2.8.0",
+    "exports-loader": "^0.7.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "favicons-webpack-plugin": "^0.0.7",
     "file-loader": "^0.11.2",
     "html-loader": "^0.4.5",
+    "imports-loader": "^0.8.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.5.0",
     "karma-chrome-launcher": "^2.0.0",

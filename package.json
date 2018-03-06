@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build": "rimraf ./build && eslint *.js && webpack --config ./configuration/webpack.config.prod.js",
-    "dev": "TASK=develop webpack-dev-server --host 192.168.1.77",
+    "dev": "TASK=develop webpack-dev-server",
+    "dev:mobile": "TASK=develop webpack-dev-server --host 192.168.1.77",
     "develop": "nodemon --watch configuration/webpack.config.common.js webpack-dev-server --config ./configuration/webpack.config.develop.js --open",
     "serve": "webpack --config ./webpack.config.prod.js -p --progress --profile --bail && http-server ./build -o",
     "test:unit": "rimraf ./reports && karma start",

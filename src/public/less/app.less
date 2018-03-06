@@ -38,16 +38,14 @@ html {
     font-family: Lato;
     text-align: center;
     font-size: 100%;
-    padding-top: @siteHeaderHeight + 30px;
+    padding-top: @siteHeaderHeight;
     padding-bottom: 30px;
 
     @media @smallerScreen {
       font-size: 75%;
-      padding-top: @shrunkSiteHeaderHeight + 20px;
+      padding-top: @shrunkSiteHeaderHeight;
     }
   }
-
-
 
   .gold {
     color: @goldTextDarkerColour;
@@ -58,10 +56,19 @@ html {
     animation: animGold 100s ease-in-out infinite;
   }
 
+  p {
+    font-size: 170%;
+    color: @textColour;
+  }
+
   h1 {
     font-size: 4.5em;
     letter-spacing: 10px;
     min-width: 500px;
+  }
+
+  section {
+    padding-bottom: 40px;
   }
 
   h2 {
@@ -181,13 +188,13 @@ html {
 
     .hamburger-container {
       position: absolute;
-      top: 20px;
       left: 35px;
       color: @goldTextDarkerColour;
       font-size: 2.8em;
       opacity: 0;
       cursor: pointer;
       transition: opacity 0.3s ease-in;
+      line-height: @shrunkSiteHeaderHeight;
     }
 
     &.shrunk {
@@ -196,15 +203,25 @@ html {
 
     @media @smallerScreen {
       .site-header-shrunk();
+      width: 100vw;
 
       h1 {
+        float: right !important;
+        padding-right: 10px;
         text-align: right;
-        padding-right: 35px;
-        margin-top: 24px;
+        line-height: @shrunkSiteHeaderHeight;
+        margin: 0;
+        width: 100%;
+        font-size: 5.5vw !important;
+      }
+
+      .links {
+        display: none;
       }
 
       .hamburger-container {
-        font-size: 3.5em;
+        font-size: 3.2em;
+        left: 20px;
       }
     }
   }
@@ -223,9 +240,9 @@ html {
     .header-divider-shrunk();
   }
 
-  @media @smallerScreen {
-    .header-divider-shrunk();
-  }
+  //@media @smallerScreen {
+  //  .header-divider-shrunk();
+  //}
 }
 
 .site-content {
@@ -234,6 +251,7 @@ html {
   margin-right: auto;
   text-align: left;
   padding: 20px;
+  overflow-x: hidden;
 
   @media @smallerScreen {
     width: 100%;

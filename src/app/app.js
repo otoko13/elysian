@@ -19,7 +19,7 @@ import blogTemplate from './states/blog/blog.html';
 import contactUsTemplate from './states/contact_us/contact_us.html';
 
 import './plugins';
-import ug from '../../node_modules/unitegallery/dist/js/unitegallery';
+import '../../node_modules/unitegallery/dist/js/unitegallery';
 
 require('../../node_modules/unitegallery/dist/css/unite-gallery.css');
 require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default');

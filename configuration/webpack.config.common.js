@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const PATHS = {
     INDEX_HTML: path.resolve('src', 'public', 'index.html'),
@@ -36,8 +35,8 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['es2015'],
-                    plugins: ['syntax-dynamic-import'],
+                    presets: ['babel-preset-env'],
+                    plugins: ['syntax-dynamic-import', 'angularjs-annotate'],
                 },
             },
             {
@@ -74,21 +73,12 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: (module => module.context && module.context.indexOf('node_modules') !== -1),
-        }),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest',
-        }),
-
       /**
        * Load the public index.html
        */
         new HtmlWebpackPlugin({
             template: PATHS.INDEX_HTML,
-            inject: 'body',
+            favicon: 'src/public/favicon.png',
         }),
 
         new webpack.ProvidePlugin({
@@ -96,8 +86,6 @@ module.exports = {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
         }),
-
-        new FaviconsWebpackPlugin('public/favicon.png'),
     ],
 
 };

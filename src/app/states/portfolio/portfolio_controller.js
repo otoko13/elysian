@@ -1,9 +1,9 @@
 import $ from 'jquery';
-import '../../../../node_modules/unitegallery/dist/js/unitegallery';
-import '../../../../node_modules/unitegallery/dist/css/unite-gallery.css';
-import '../../../../node_modules/unitegallery/dist/themes/default/ug-theme-default';
-import '../../../../node_modules/unitegallery/dist/themes/default/ug-theme-default.css';
-import '../../../../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid';
+// import '../../../../node_modules/unitegallery/dist/js/unitegallery';
+// import '../../../../node_modules/unitegallery/dist/css/unite-gallery.css';
+// import '../../../../node_modules/unitegallery/dist/themes/default/ug-theme-default';
+// import '../../../../node_modules/unitegallery/dist/themes/default/ug-theme-default.css';
+// import '../../../../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid';
 
 /* @ngInject */
 function PortfolioController($document, $timeout) {

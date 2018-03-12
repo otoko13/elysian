@@ -85,7 +85,3 @@ application.config(['$stateProvider', function ($stateProvider) {
             templateUrl: contactUsTemplate,
         });
 }]);
-
-application.run(($rootScope) => {
-    $rootScope.applicationReady = true;
-});

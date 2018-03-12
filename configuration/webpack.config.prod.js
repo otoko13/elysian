@@ -1,22 +1,32 @@
-const path = require('path');
-const commonConfig = require('./webpack.config.common');
+const WebpackConfig = require('webpack-config');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const WebpackMd5Hash = require('webpack-md5-hash');
-const webpackMerge = require('webpack-merge');
-const NgAnnotatePlugin = require('ng-annotate-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const webpack = require('webpack');
 
-module.exports = webpackMerge(commonConfig, {
+const Config = WebpackConfig.Config;
 
-    devtool: 'source-map',
+const extractLess = new ExtractTextPlugin({
+    filename: '[name].[hash].css',
+    allChunks: true,
+});
+
+module.exports = new Config().extend({
+    'configuration/webpack.config.common.js': (config) => {
+        delete config.debug;
+        delete config.devtool;
+        delete config.devServer;
+        delete config.output.pathinfo;
+
+        // Override filename
+        config.output.filename = '[name]-[chunkhash].js';
+
+        return config;
+    },
+}).merge({
+
+    devtool: 'cheap-module-source-map',
 
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
             {
                 test: /\.less$/,
                 use: ExtractTextPlugin.extract({
@@ -24,11 +34,20 @@ module.exports = webpackMerge(commonConfig, {
                         {
                             loader: 'css-loader',
                             options: {
-                                minimize: true || {/* CSSNano Options */},
+                                importLoaders: 2,
                             },
                         },
                         {
                             loader: 'postcss-loader',
+                            options: {
+                                ident: 'postcss',
+                                plugins: () => [
+                                    // eslint-disable-next-line
+                                    require('autoprefixer')(),
+                                    // eslint-disable-next-line
+                                    require('cssnano')(),
+                                ],
+                            },
                         },
                         {
                             loader: 'less-loader',
@@ -40,30 +59,14 @@ module.exports = webpackMerge(commonConfig, {
         ],
     },
 
-    output: {
-        path: path.join(__dirname, '../build'),
-        filename: '[name].[chunkhash].bundle.js',
-        sourceMapFilename: '[name].[chunkhash].bundle.map',
-        chunkFilename: '[id].[chunkhash].chunk.js',
-    },
-
     plugins: [
-        new NgAnnotatePlugin({
-            add: true,
-        }),
-        new WebpackMd5Hash(),
-        new UglifyJsPlugin({
-            beautify: false,
-            mangle: { screw_ie8: true, keep_fnames: true }, // eslint-disable-line camelcase
-            compress: { screw_ie8: true }, // eslint-disable-line camelcase
-            comments: false,
-            sourceMap: true,
-        }),
-        new ExtractTextPlugin('[name].[chunkhash].style.css'),
-        new BundleAnalyzerPlugin({
-            analyzerMode: 'disabled',
-            generateStatsFile: true,
-        }),
+        /**
+         * Manage order of occurence of bundles
+         */
+        new webpack.optimize.OccurrenceOrderPlugin(true),
+        /**
+         * Extract less files to a single file
+         */
+        extractLess,
     ],
-
 });

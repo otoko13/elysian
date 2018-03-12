@@ -1,11 +1,13 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ConcatPlugin = require('webpack-concat-plugin');
 
 const PATHS = {
     INDEX_HTML: path.resolve('src', 'public', 'index.html'),
     APP: path.resolve('src', 'app'),
     DIST: path.resolve('dist'),
+    NODE_MODULES: path.resolve('node_modules'),
 };
 
 module.exports = {
@@ -73,12 +75,29 @@ module.exports = {
     },
 
     plugins: [
+        new ConcatPlugin({
+            uglify: false,
+            name: 'unitegallery-concat',
+            outputPath: '',
+            injectType: 'prepend',
+            fileName: 'unitegallery-concat.js',
+            filesToConcat: [
+                `${path.join(PATHS.NODE_MODULES, 'unitegallery')}/dist/js/unitegallery.js`,
+                `${path.join(PATHS.NODE_MODULES, 'unitegallery')}/dist/themes/default/ug-theme-default.js`,
+                `${path.join(PATHS.NODE_MODULES, 'unitegallery')}/dist/themes/tilesgrid/ug-theme-tilesgrid.js`,
+            ],
+            // filesToConcat: ['jquery', './src/lib/**', './dep/dep.js', ['./some/**', '!./some/excludes/**']],
+            attributes: {
+                async: false,
+            },
+        }),
       /**
        * Load the public index.html
        */
         new HtmlWebpackPlugin({
             template: PATHS.INDEX_HTML,
             favicon: 'src/public/favicon.png',
+            inject: true,
         }),
 
         new webpack.ProvidePlugin({

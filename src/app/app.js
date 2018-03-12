@@ -18,13 +18,12 @@ import servicesTemplate from './states/services/services.html';
 import blogTemplate from './states/blog/blog.html';
 import contactUsTemplate from './states/contact_us/contact_us.html';
 
-import './plugins';
-import '../../node_modules/unitegallery/dist/js/unitegallery';
+// import '../../node_modules/unitegallery/dist/js/unitegallery';
 
-require('../../node_modules/unitegallery/dist/css/unite-gallery.css');
-require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default');
-require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default.css');
-require('../../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid');
+// require('../../node_modules/unitegallery/dist/css/unite-gallery.css');
+// require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default');
+// require('../../node_modules/unitegallery/dist/themes/default/ug-theme-default.css');
+// require('../../node_modules/unitegallery/dist/themes/tilesgrid/ug-theme-tilesgrid');
 
 /* eslint-disable */
 const libDependencies = [
@@ -87,7 +86,3 @@ application.config(['$stateProvider', function ($stateProvider) {
             templateUrl: contactUsTemplate,
         });
 }]);
-
-application.run(($rootScope) => {
-    $rootScope.applicationReady = true;
-});

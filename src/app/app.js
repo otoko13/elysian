@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import angular from 'angular';
-import 'jquery';
+import $ from 'jquery';
 
 // libraries
 import uiBootstrap from 'angular-ui-bootstrap';
@@ -12,24 +12,15 @@ import '../public/less/app.less';
 
 /* eslint-disable */
 // PLUGINS
-// import '../plugins/unitegallery/css/unite-gallery.css';
-// import '../plugins/unitegallery/themes/default/ug-theme-default.css';
-// require('../../node_modules/ev-emitter/ev-emitter');
-// require('../../node_modules/desandro-matches-selector/matches-selector');
-// require('../../node_modules/fizzy-ui-utils/utils');
-// require('../../node_modules/get-size/get-size');
-// require('../../node_modules/outlayer/item');
-// require('../../node_modules/outlayer/outlayer');
-// require('../../node_modules/masonry-layout/masonry');
-// require('../../node_modules/imagesloaded/imagesloaded');
-
 require('jquery-bridget/jquery-bridget');
+// MASONRY
 const masonry = require('masonry-layout');
 const imagesloaded = require('../../node_modules/imagesloaded');
-// make Masonry a jQuery plugin
 $.bridget( 'masonry', masonry, $ );
 $.bridget( 'imagesLoaded', imagesloaded, $ );
-// Now you can use $('...').masonry(...)
+// LIGHTGALLERY
+require('lightgallery/dist/js/lightgallery-all.min');
+import '../../node_modules/lightgallery/dist/css/lightgallery.min.css';
 
 // templates
 import ourStoryTemplate from './states/our_story/our_story.html';
@@ -48,6 +39,7 @@ const libDependencies = [
 
 const appDependencies = [
     require('./components/click_outside'),
+    require('./components/lightgallery'),
     require('./components/on_scroll_down'),
     require('./components/main_controller'),
     require('./components/side_menu'),

@@ -2,9 +2,9 @@
     <section ng-repeat="section in portfolio">
         <h2>{{section.section}}</h2>
         <div masonry masonry-options="{ gutter: 10, fitWidth: true }" load-images="true" class="masonry-container">
-            <div class="masonry-brick" ng-repeat="img in section.images">
-                <img ng-src="{{ img.thumbnailSrc }}" alt="{{ img.name }}">
-            </div>
+            <a class="masonry-brick" ng-repeat="img in section.images" lightgallery data-src="{{img.src}}">
+                <img ng-src="{{img.thumbnailSrc}}" alt="{{img.name}}">
+            </a>
         </div>
     </section>
 </div>

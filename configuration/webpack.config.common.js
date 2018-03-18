@@ -1,14 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ConcatPlugin = require('webpack-concat-plugin');
 
 const PATHS = {
     INDEX_HTML: path.resolve('src', 'public', 'index.html'),
     APP: path.resolve('src', 'app'),
     NODE_MODULES: path.resolve('node_modules'),
     DIST: path.resolve('dist'),
-    NODE_MODULES: path.resolve('node_modules'),
 };
 
 module.exports = {
@@ -72,34 +70,10 @@ module.exports = {
                 // exclude: /node_modules/,
                 loader: 'file-loader?limit=1024&name=fonts/[name].[hash].[ext]',
             },
-            {
-                test: /unitegallery\.js$/,
-                loader: 'exports-loader?g_ugFunctions',
-            },
-            // {
-            //     test: /ug-theme-tilesgrid\.js$/,
-            //     loader: 'imports-loader?g_ugFunctions=g_ugFunctions',
-            // },
         ],
     },
 
     plugins: [
-        new webpack.ProvidePlugin({
-            g_ugFunctions: path.resolve(PATHS.NODE_MODULES, 'unitegallery', 'dist', 'js', 'unitegallery.js'),
-        }),
-
-        new webpack.ProvidePlugin({
-            UGTheme_default: path.resolve(PATHS.NODE_MODULES, 'unitegallery', 'dist', 'themes', 'default', 'ug-theme-default.js'),
-        }),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            minChunks: (module => module.context && module.context.indexOf('node_modules') !== -1),
-        }),
-
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'manifest',
-        }),
       /**
        * Load the public index.html
        */

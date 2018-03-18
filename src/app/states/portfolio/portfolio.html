@@ -1,13 +1,10 @@
 <div class="portfolio">
-    <div id="gallery" style="display:none;">
-
-        <img alt="Image 1 Title" src="../../../public/img/goldfoil2.jpg"
-             data-image="../../../public/img/goldfoil.jpg"
-             data-description="Image 1 Description">
-
-        <img alt="Image 1 Title" src="../../../public/img/goldfoil.jpg"
-             data-image="../../../public/img/goldfoil2.jpg"
-             data-description="Image 1 Description">
-
-    </div>
+    <section ng-repeat="section in portfolio">
+        <h2>{{section.section}}</h2>
+        <div masonry masonry-options="{ gutter: 10, fitWidth: true }" load-images="true" class="masonry-container">
+            <div class="masonry-brick" ng-repeat="img in section.images">
+                <img ng-src="{{ img.thumbnailSrc }}" alt="{{ img.name }}">
+            </div>
+        </div>
+    </section>
 </div>

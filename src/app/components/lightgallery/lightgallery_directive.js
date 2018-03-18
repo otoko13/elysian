@@ -11,6 +11,7 @@ function LightgalleryDirective() {
                         fullScreen: true,
                         download: false,
                         hash: false,
+                        addClass: 'elysian-lg',
                     });
                 }
             });

@@ -11,7 +11,42 @@ import img6Thumb from '../../../public/img/portfolio/img6_thumb.jpg';
 
 const gallery = [
     {
-        section: 'Test',
+        section: 'Test Gallery 1',
+        images: [
+            {
+                name: 'Grignotte',
+                description: '',
+                thumbnailSrc: img1Thumb,
+                src: img1,
+            },
+            {
+                name: 'Secret Empire',
+                description: 'second gold foil image',
+                thumbnailSrc: img3Thumb,
+                src: img3,
+            },
+            {
+                name: 'Zuki',
+                description: 'second gold foil image',
+                thumbnailSrc: img4Thumb,
+                src: img4,
+            },
+            {
+                name: 'Brats',
+                description: 'second gold foil image',
+                thumbnailSrc: img5Thumb,
+                src: img5,
+            },
+            {
+                name: 'More brats',
+                description: 'second gold foil image',
+                thumbnailSrc: img6Thumb,
+                src: img6,
+            },
+        ],
+    },
+    {
+        section: 'Test Gallery 2',
         images: [
             {
                 name: 'Grignotte',

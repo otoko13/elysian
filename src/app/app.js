@@ -20,7 +20,6 @@ $.bridget( 'masonry', masonry, $ );
 $.bridget( 'imagesLoaded', imagesloaded, $ );
 // LIGHTGALLERY
 require('lightgallery/dist/js/lightgallery-all.min');
-import '../../node_modules/lightgallery/dist/css/lightgallery.min.css';
 
 // templates
 import ourStoryTemplate from './states/our_story/our_story.html';
